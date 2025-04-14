@@ -31,9 +31,9 @@ document.getElementById("submitButton").addEventListener("click", function () {
         Country: country
     };
 
-    console.log(formData)
+    console.log(formData);
 
-    // Send the POST request
+    //help with some error stuff from chatgpt. used for troubleshooting
     fetch("https://nscc0498497-inft4000-api-avbsbxgjetcca4ca.canadacentral-01.azurewebsites.net/api/customers", {
         method: "POST",
         headers: {
@@ -41,15 +41,17 @@ document.getElementById("submitButton").addEventListener("click", function () {
         },
         body: JSON.stringify(formData)
     })
-        .then(response => {
+        .then(async response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                const errorData = await response.text();
+                console.error("Error response:", errorData);
+                throw new Error(`HTTP error! Status: ${response.status}. Message: ${errorData}`);
             }
-            return response.json(); // or response.text() if expecting text
+            return response.text();
         })
         .then(data => {
             console.log("Success:", data);
-            alert("Customer submitted successfully!");
+            alert(data);
         })
         .catch(error => {
             console.error("Error:", error);
