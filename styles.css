@@ -1,34 +1,31 @@
-/* Custom styling for form and center alignment */
+/* Make sure the body can scroll */
 body {
-    background-color: #f8f9fa;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
+/* Add some padding and centering for the form */
 .form-container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
     width: 100%;
-    max-width: 600px;
 }
 
+/* Make sure the form container is responsive */
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+}
+
+/* Ensure that the header is always visible */
 h1 {
     text-align: center;
+    font-size: 1.8rem;
     margin-bottom: 20px;
-}
-
-.form-label {
-    font-weight: bold;
-}
-
-.btn-primary {
-    width: 100%;
-}
-
-.form-control {
-    border-radius: 5px;
 }
