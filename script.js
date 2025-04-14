@@ -31,6 +31,26 @@ document.getElementById("submitButton").addEventListener("click", function () {
         Country: country
     };
 
-    // Log the JSON object (you can send this to a server or process further)
-    console.log(formData);
+    // Send the POST request
+    fetch("https://nscc0498497-inft4000-api-avbsbxgjetcca4ca.canadacentral-01.azurewebsites.net/api/customers", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // or response.text() if expecting text
+        })
+        .then(data => {
+            console.log("Success:", data);
+            alert("Customer submitted successfully!");
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("There was a problem submitting the form.");
+        });
 });
