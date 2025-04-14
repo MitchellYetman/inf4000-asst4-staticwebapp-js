@@ -5,17 +5,20 @@ body {
     margin: 0;
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    /* A darker background to contrast with the form */
 }
 
-/* Add some padding and centering for the form */
+/* Center the form horizontally */
 .form-container {
     padding: 20px;
     margin: 0 auto;
-    max-width: 800px;
-    width: 100%;
+    max-width: 1200px;
+    width: 90%;
+    /* No changes needed for vertical centering */
 }
 
-/* Make sure the form container is responsive */
+/* Ensure that the container spans the full width */
 .container {
     width: 100%;
     padding-left: 15px;
@@ -25,7 +28,40 @@ body {
 
 /* Ensure that the header is always visible */
 h1 {
-    text-align: center;
     font-size: 1.8rem;
     margin-bottom: 20px;
+}
+
+/* Style for the header image */
+.header-image {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Form label spacing */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Make the form inputs smaller and light background */
+.form-control {
+    background-color: #e5e2e2;
+    width: 30%;
+    /* 30% of the form container */
+    min-width: 400px;
+    /* Prevents inputs from being too small on narrow screens */
+}
+
+/* Form container (to center horizontally) */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center horizontally */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
 }
