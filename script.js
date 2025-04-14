@@ -16,11 +16,11 @@ document.getElementById("submitButton").addEventListener("click", function () {
 
     // Create the JSON object
     const formData = {
-        ConcertId: concertId,
+        ConcertId: parseInt(concertId),
         Email: email,
         Name: name,
         Phone: phone,
-        Quantity: quantity,
+        Quantity: parseInt(quantity),
         CreditCard: creditCard,
         Expiration: expiration,
         SecurityCode: securityCode,
@@ -30,6 +30,8 @@ document.getElementById("submitButton").addEventListener("click", function () {
         PostalCode: postalCode,
         Country: country
     };
+
+    console.log(formData)
 
     // Send the POST request
     fetch("https://nscc0498497-inft4000-api-avbsbxgjetcca4ca.canadacentral-01.azurewebsites.net/api/customers", {
